@@ -1,0 +1,22 @@
+<div class="card">
+    <ng-template #noImage>
+        <img src="https://www.variety.org.au/sa/wp-content/uploads/2016/06/placeholder.png" class="card-img-top" alt="No Image">
+    </ng-template>
+
+    <ng-container *ngIf="product.imageUrl; else noImage;">
+        <img [src]="product.imageUrl" class="card-img-top" alt="{{product.title}}">
+    </ng-container>
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text">{{product.price | currency:'USD':'symbol'}}</p>
+
+    </div>
+    <div class="card-footer" *ngIf="showActions && shoppingCart">
+        <button
+        *ngIf="shoppingCart.getQuantity(product) == 0; else updateQuantity"
+         (click)="addToCart()" class="btn btn-primary btn-block">Add To Cart</button>
+         <ng-template #updateQuantity>
+           <product-quantity [product]="product" [shopping-cart]="shoppingCart"></product-quantity>
+         </ng-template>
+      </div>
+  </div>
