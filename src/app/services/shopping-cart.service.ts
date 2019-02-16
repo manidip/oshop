@@ -20,7 +20,7 @@ export class ShoppingCartService {
     const cartId = await this.getOrCreateCartId();
     return this.db.list('/shopping-cart/' + cartId).valueChanges().pipe(
       map(cart => {
-       return  new ShoppingCart(cart[1]);
+       return  new ShoppingCart(cart[0]);
       })
     );
   }
@@ -52,11 +52,16 @@ export class ShoppingCartService {
     const itemRef = this.getItem(cartId, product.key);
     const item$ = itemRef.valueChanges();
     item$.pipe(take(1)).subscribe(
-      item => {
+      (item: { quantity: number }) => {
         if ( item && (item.quantity + change) === 0) {
           itemRef.remove();
         } else {
-          itemRef.update({product: product, quantity: ((item) ? item.quantity : 0) + change});
+          itemRef.update({
+            key: product.key,
+            title: product.title,
+            imageUrl: product.imageUrl,
+            price: product.price,
+            quantity: ((item) ? item.quantity : 0) + change});
         }
       }
     );

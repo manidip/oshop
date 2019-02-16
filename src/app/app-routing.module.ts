@@ -12,10 +12,12 @@ import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orde
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { AuthGuard } from './guards/auth-guard/auth-guard.service';
 import { AdminAuthGuard } from './guards/admin-auth-guard/admin-auth-guard.service';
+import { NotAllowedComponent } from './not-allowed/not-allowed.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/products', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
+  {path: 'restricted', component: NotAllowedComponent},
   {path: 'products', component: ProductsComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
   {path: 'check-out', component: CheckoutComponent, canActivate: [AuthGuard]},

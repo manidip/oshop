@@ -11,10 +11,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of cart.items">
-      <td> <a [routerLink]="['/admin/products',item.product.key]">{{ item.product.title }}</a></td>
+      <td> <a [routerLink]="['/admin/products',item.key]">{{ item.title }}</a></td>
       <td>
         <product-quantity
-        [product]="item.product"
+        [product]="item"
         [shopping-cart]="cart">
       </product-quantity>
     </td>

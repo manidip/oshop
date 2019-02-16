@@ -1,4 +1,4 @@
-import { CanActivate, Router } from '@angular/router';
+import { CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { map, switchMap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
@@ -17,10 +17,13 @@ export class AdminAuthGuard implements CanActivate {
     private router: Router
     ) { }
 
-  canActivate(): Observable<boolean> {
-    return of(true);
+  canActivate(route, state: RouterStateSnapshot): Observable<boolean> { 
     return this.auth.appUser$.pipe(
-      map(appUser => appUser.isAdmin )
+      map(appUser => {
+        if(appUser.isAdmin)
+          return true;
+          this.router.navigate(['/restricted'], { queryParams: {returnUrl: state.url}});
+      } )
     );
   }
 }

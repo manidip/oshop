@@ -31,6 +31,7 @@ import { ProductFormComponent } from './components/admin/product-form/product-fo
 import { ProductFilterComponent } from './components/products/product-filter/product-filter.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductQuantityComponent } from './components/product-quantity/product-quantity.component';
+import { NotAllowedComponent } from './not-allowed/not-allowed.component';
 
 
 
@@ -51,6 +52,7 @@ import { ProductQuantityComponent } from './components/product-quantity/product-
     ProductFilterComponent,
     ProductCardComponent,
     ProductQuantityComponent,
+    NotAllowedComponent,
   ],
   imports: [
     BrowserModule,
