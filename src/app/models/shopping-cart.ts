@@ -5,9 +5,7 @@ constructor(public itemsMap) {
   for ( let productID in itemsMap) {
     if (itemsMap.hasOwnProperty(productID)) {
       let item = itemsMap[productID];
-      let x = new ShoppingCartItem();
-      Object.assign(x,item);
-      this.items.push(x);
+      this.items.push(new ShoppingCartItem(...item));
     }
   }
 }

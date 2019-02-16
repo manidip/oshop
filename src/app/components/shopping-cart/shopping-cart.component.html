@@ -29,4 +29,5 @@
     </tr>
   </tfoot>
 </table>
+<button class="btn btn-danger btn-small" *ngIf="cart.totalItemsCount() !== 0" (click)="clearCart()">Clear Shoppint Cart</button>
 </ng-container>
