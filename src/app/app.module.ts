@@ -32,6 +32,9 @@ import { ProductFilterComponent } from './components/products/product-filter/pro
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductQuantityComponent } from './components/product-quantity/product-quantity.component';
 import { NotAllowedComponent } from './not-allowed/not-allowed.component';
+import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary/shopping-cart-summary.component';
+import { ShippingFormComponent } from './components/shipping-form/shipping-form.component';
+import { AdminOrderDetailsComponent } from './components/admin/admin-order-details/admin-order-details.component';
 
 
 
@@ -53,6 +56,9 @@ import { NotAllowedComponent } from './not-allowed/not-allowed.component';
     ProductCardComponent,
     ProductQuantityComponent,
     NotAllowedComponent,
+    ShoppingCartSummaryComponent,
+    ShippingFormComponent,
+    AdminOrderDetailsComponent,
   ],
   imports: [
     BrowserModule,

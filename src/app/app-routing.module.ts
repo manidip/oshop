@@ -13,6 +13,7 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { AuthGuard } from './guards/auth-guard/auth-guard.service';
 import { AdminAuthGuard } from './guards/admin-auth-guard/admin-auth-guard.service';
 import { NotAllowedComponent } from './not-allowed/not-allowed.component';
+import { AdminOrderDetailsComponent } from './components/admin/admin-order-details/admin-order-details.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/products', pathMatch: 'full'},
@@ -21,11 +22,12 @@ const routes: Routes = [
   {path: 'products', component: ProductsComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
   {path: 'check-out', component: CheckoutComponent, canActivate: [AuthGuard]},
-  {path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuard]},
+  {path: 'order-success/:id', component: OrderSuccessComponent, canActivate: [AuthGuard]},
   {path: 'my-orders', component: MyOrdersComponent, canActivate: [AuthGuard]},
   {path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuard, AdminAuthGuard]},
   {path: 'admin/products/:id', component: ProductFormComponent, canActivate: [AuthGuard, AdminAuthGuard]},
   {path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuard, AdminAuthGuard]},
+  {path: 'admin/orders/:id', component: AdminOrderDetailsComponent, canActivate: [AuthGuard, AdminAuthGuard]},
   {path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard, AdminAuthGuard]},
 ];
 

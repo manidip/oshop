@@ -1,7 +1,7 @@
 import { ShoppingCartItem } from './shopping-cart-item';
 export class ShoppingCart {
 items: any[] = [];
-constructor(public itemsMap) {
+constructor(private itemsMap) {
   for ( let productID in itemsMap) {
     if (itemsMap.hasOwnProperty(productID)) {
       let item = itemsMap[productID];
