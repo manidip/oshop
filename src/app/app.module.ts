@@ -1,42 +1,32 @@
-
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
-import { CustomFormsModule } from 'ng2-validation';
-import { DataTableModule } from './data-table';
-
-
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CustomFormsModule } from 'ng2-validation';
 
-import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
+import { AdminModule } from './admin/admin.module';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { BsNavbarComponent } from './components/bs-navbar/bs-navbar.component';
-import { HomeComponent } from './components/home/home.component';
-import { ProductsComponent } from './components/products/products.component';
-import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
-import { OrderSuccessComponent } from './components/order-success/order-success.component';
-import { MyOrdersComponent } from './components/my-orders/my-orders.component';
-import { AdminProductsComponent } from './components/admin/admin-products/admin-products.component';
-import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orders.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { ProductFormComponent } from './components/admin/product-form/product-form.component';
+import { MyOrdersComponent } from './components/my-orders/my-orders.component';
+import { OrderSuccessComponent } from './components/order-success/order-success.component';
 import { ProductFilterComponent } from './components/products/product-filter/product-filter.component';
-import { ProductCardComponent } from './components/product-card/product-card.component';
-import { ProductQuantityComponent } from './components/product-quantity/product-quantity.component';
-import { NotAllowedComponent } from './not-allowed/not-allowed.component';
-import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary/shopping-cart-summary.component';
+import { ProductsComponent } from './components/products/products.component';
 import { ShippingFormComponent } from './components/shipping-form/shipping-form.component';
-import { AdminOrderDetailsComponent } from './components/admin/admin-order-details/admin-order-details.component';
-
-
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { DataTableModule } from './data-table';
+import { NotAllowedComponent } from './not-allowed/not-allowed.component';
+import { ShoppingCartSummaryComponent } from './shared/components/shopping-cart-summary/shopping-cart-summary.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -47,21 +37,19 @@ import { AdminOrderDetailsComponent } from './components/admin/admin-order-detai
     ShoppingCartComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
-    AdminProductsComponent,
-    AdminOrdersComponent,
     CheckoutComponent,
     LoginComponent,
-    ProductFormComponent,
+    
     ProductFilterComponent,
-    ProductCardComponent,
-    ProductQuantityComponent,
     NotAllowedComponent,
     ShoppingCartSummaryComponent,
     ShippingFormComponent,
-    AdminOrderDetailsComponent,
+    
   ],
   imports: [
     BrowserModule,
+    SharedModule,
+    AdminModule,
     FormsModule,
     CustomFormsModule,
     DataTableModule,

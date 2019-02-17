@@ -1,6 +1,6 @@
 import { switchMap } from 'rxjs/operators';
-import { AuthService } from './../../services/auth/auth.service';
-import { OrderService } from './../../services/order/order.service';
+import { AuthService } from '../../shared/services/auth/auth.service';
+import { OrderService } from '../../shared/services/order/order.service';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
