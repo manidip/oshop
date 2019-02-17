@@ -1,7 +1,8 @@
 import { ProductService } from '../../../shared/services/product/product.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { DataTableResource } from '../../../data-table';
+import { DataTableResource } from '../../../shared/data-table';
+
 
 @Component({
   selector: 'app-admin-products',
