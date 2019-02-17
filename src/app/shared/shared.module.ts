@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { ProductQuantityComponent } from '../components/product-quantity/product-quantity.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductQuantityComponent } from './components/product-quantity/product-quantity.component';
 import { AuthGuard } from './services/auth-guard/auth-guard.service';
 import { AuthService } from './services/auth/auth.service';
 import { CategoryService } from './services/category/category.service';
